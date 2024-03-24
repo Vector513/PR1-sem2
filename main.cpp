@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <fstream>
 #include <Windows.h>
 
@@ -25,7 +25,7 @@ struct Student
 	char sex = '?';
 	int group = 0;
 	int id = 0;
-	int grades[countGrades] = {}; // >>
+	int grades[countGrades] = {};
 	float avgScore = 0;
 	float getAvgScore() 
 	{
@@ -52,6 +52,16 @@ struct Valleyballer
 
 Student students[countStudents] = {};
 Valleyballer vbs[countVB] = {};
+
+bool compareStrings(char str1[], char str2[])
+{
+	for (int i = 0; i < stringLength; i++) {
+		if (*(str1 + i) != *(str2 + i)) {
+			return false;
+		}
+	}
+	return true;
+}
 
 void createRecord(Student* student)
 {
@@ -242,7 +252,7 @@ void launch()
 			cin >> surname >> name >> patronymic;
 			bool isThere = false;
 			for (int i = 0; i < currStudent; i++) {
-				if (*students[i].surname == *surname && *students[i].name == *name && *students[i].patronymic == *patronymic) {
+				if (compareStrings(students[i].surname, surname) && compareStrings(students[i].name, name) && compareStrings(students[i].patronymic, patronymic)) {
 					createRecord(&students[i]);
 					isThere = true;
 					break;
