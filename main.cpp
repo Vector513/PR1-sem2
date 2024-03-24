@@ -53,24 +53,6 @@ struct Valleyballer
 Student students[countStudents] = {};
 Valleyballer vbs[countVB] = {};
 
-/*
-bool compare(char string1[], char string2[]) 
-{
-	int i = 0;
-	for (; i < stringLength; i++) {
-		if (string1[i] != string2[i]) {
-			cout << i;
-			return false;
-		}
-		else if (string1[i] == '\0' || string2[i] == '\0') {
-			break;
-		}
-	}
-	cout << i;
-	return true;
-}
-*/
-
 void createRecord(Student* student)
 {
 	cout << "ФИО: ";
@@ -475,19 +457,6 @@ int main()
 	SetConsoleOutputCP(1251);
 	setlocale(LC_ALL, "Russian");
 
-	/**
-	fstream inFile;
-	char path[] = "students.txt";
-	inFile.open(path);
-
-	if (inFile.is_open()) {
-		cout << "Файл был открыт\n";
-		inFile << "HUIIIIIIIIIIIIIIIIIIIIIIIIIIii\n";
-	}
-	else {
-		cout << "Ошибка\n";
-	}
-	*/
 	launch();
 
 
